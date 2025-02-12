@@ -35,7 +35,7 @@ OBSERVACIONS:
       - Es fa servir la banda SCL per identificar núvols amb codis específics (8, 9, 10).
       - Els píxels de neu/gel (SCL=11) no s’han inclòs en aquest càlcul.
       - Els resultats es poden processar posteriorment amb R per a una anàlisi més detallada.
-	*** Qualsevol ombra de núvol (SCL=3) no es considera núvol directa, però pot afectar la interpretació en algun cas. (si es  	considera necessari ho podem tenir en compte i afegir). ***
+	*** Qualsevol ombra de núvol (SCL=3) no es considera núvol directe, però pot afectar la interpretació en algun cas. (si es considera necessari ho podem tenir en compte i afegir). ***
 
 
 EL CODI COMPLET de GEE ES TROBA ALS FITXERS:
