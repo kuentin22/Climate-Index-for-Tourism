@@ -84,5 +84,5 @@ OBSERVACIONS:
      - **1 m/s = 3.6 km/h**
      - L’exportació a CSV està optimitzada per evitar errors en la lectura a Excel.
 
-EL CODI COMPLET de GEE ES TROBA AL FITXER codi_GEE (per al període 1981-Actualitat) a la carpeta
+EL CODI COMPLET de GEE ES TROBA AL FITXER codi_GEE (per al període 1981-Actualitat) a la carpeta RMarkdown
 
