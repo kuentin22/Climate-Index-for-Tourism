@@ -1,21 +1,5 @@
 {
     "debugBreakpointsState": {
-        "breakpoints": [
-            {
-                "id": 0,
-                "path": "C:/Users/aquintana/Desktop/ARI/CIT/Nuvolositat_MODIS/R/codi_valors_nuv.R",
-                "line_number": 67,
-                "function_steps": "",
-                "function_name": "toplevel",
-                "state": 1,
-                "editor_state": 1,
-                "editor_line_number": 67,
-                "is_pending_debug_completion": false,
-                "needs_updated_steps": false,
-                "type": 1,
-                "is_package_breakpoint": false,
-                "package_name": ""
-            }
-        ]
+        "breakpoints": []
     }
 }

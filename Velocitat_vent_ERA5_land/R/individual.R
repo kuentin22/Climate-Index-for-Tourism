@@ -1,7 +1,7 @@
 ###########################################################################
-# Títol: Taula valors finals nuvolositat. Post-GEE (Automatitzat)
+# Títol: Taula valors finals velocitat vent (m/s)
 # Autor: Alexandre Quintana Clarà
-# Data: 06/02/2025
+# Data: 14/01/2025
 ###########################################################################
 
 # Carreguem llibreries necessàries
@@ -14,24 +14,24 @@ library(readxl)
 library(writexl)
 library(lubridate)
 
-# Primer hem de tenir en un xlsx (DRIVE) amb el llistat del % de nuvolositat de cada any 
+# Primer hem de tenir en un xlsx (DRIVE) amb el llistat de la velocitat del vent de cada any 
 
 # Definim la ruta del fitxer Excel que conté la taula
-fitxer_input <- "C:/Users/aquintana/Desktop/ARI/CIT/Nuvolositat_MODIS/Originals/Taula_nuvolositat_2000_Andorra.xlsx"
+fitxer_input <- "C:/Users/aquintana/Desktop/ARI/CIT/Velocitat_vent_ERA5_land/Originals/Taula_velocitat_vent_2000_Andorra.xlsx"
 
-fitxer_input <- "C:/Users/aquintana/Desktop/ARI/CIT/Nuvolositat_MODIS/Originals/Taula_nuvolositat_2001_Andorra.xlsx"
+fitxer_input <- "C:/Users/aquintana/Desktop/ARI/CIT/Velocitat_vent_ERA5_land/Originals/Taula_velocitat_vent_2001_Andorra.xlsx"
 
-fitxer_input <- "C:/Users/aquintana/Desktop/ARI/CIT/Nuvolositat_MODIS/Originals/Taula_nuvolositat_2002_Andorra.xlsx"
+fitxer_input <- "C:/Users/aquintana/Desktop/ARI/CIT/Velocitat_vent_ERA5_land/Originals/Taula_velocitat_vent_2002_Andorra.xlsx"
 
 
 # Llegim el full 1 
-valors_bons <- read_excel(path = fitxer_input, sheet = "Taula_nuvolositat_2000_Andorra")
+valors_bons <- read_excel(path = fitxer_input, sheet = "Taula_velocitat_vent_2000_Andorra")
 
-valors_bons <- read_excel(path = fitxer_input, sheet = "Taula_nuvolositat_2001_Andorra")
+valors_bons <- read_excel(path = fitxer_input, sheet = "Taula_velocitat_vent_2001_Andorra")
 
-valors_bons <- read_excel(path = fitxer_input, sheet = "Taula_nuvolositat_2002_Andorra")
+valors_bons <- read_excel(path = fitxer_input, sheet = "Taula_velocitat_vent_2002_Andorra")
 
-valors_ori <- valors_bons[["percent_nuvolositat"]]
+valors_ori <- valors_bons[["Taula_Velocitat_vent_"]]
 
 # Definim la funció de conversió 
 conv_valor <- function(x) {
@@ -82,16 +82,16 @@ valors_character <- as.character(valors_ori)
 valors_formatats <- sapply(valors_character, conv_valor)
 
 # Substituïm la columna original per la columna nova "formatada"
-valors_bons[["percent_nuvolositat"]] <- valors_formatats
+valors_bons[["Taula_Velocitat_vent_"]] <- valors_formatats
 
 # Guardem el Data Frame corregit a un altre Excel
-fitxer_output <- "C:/Users/aquintana/Desktop/ARI/CIT/Nuvolositat_MODIS/Originals/Taula_nuvolositat_2000_Andorra_CORREGIT.xlsx"
+fitxer_output <- "C:/Users/aquintana/Desktop/ARI/CIT/Velocitat_vent_ERA5_land/Originals/Taula_velocitat_vent_2000_Andorra_CORREGIT.xlsx"
 write_xlsx(valors_bons, path = fitxer_output)
 
-fitxer_output <- "C:/Users/aquintana/Desktop/ARI/CIT/Nuvolositat_MODIS/Originals/Taula_nuvolositat_2001_Andorra_CORREGIT.xlsx"
+fitxer_output <- "C:/Users/aquintana/Desktop/ARI/CIT/Velocitat_vent_ERA5_land/Originals/Taula_velocitat_vent_2001_Andorra_CORREGIT.xlsx"
 write_xlsx(valors_bons, path = fitxer_output)
 
-fitxer_output <- "C:/Users/aquintana/Desktop/ARI/CIT/Nuvolositat_MODIS/Originals/Taula_nuvolositat_2002_Andorra_CORREGIT.xlsx"
+fitxer_output <- "C:/Users/aquintana/Desktop/ARI/CIT/Velocitat_vent_ERA5_land/Originals/Taula_velocitat_vent_2002_Andorra_CORREGIT.xlsx"
 write_xlsx(valors_bons, path = fitxer_output)
 
 
